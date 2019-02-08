@@ -34,7 +34,7 @@ inline unsigned getComponentID()
 }
 
 template <typename T>
-inline unsigned getComponentID() const
+inline unsigned getComponentID() noexcept
 {
 	static unsigned componentID = getComponentID();
 	return componentID;
@@ -47,7 +47,7 @@ inline T* Entity::addComponent(TArgs... args)
 	component->owner = this;
 
 	components[getComponentID<T>()] = component;
-	componentFlags[getComponent<T>()] = true;
+	componentFlags[getComponentID<T>()] = true;
 
 	return component;
 }
@@ -55,7 +55,7 @@ inline T* Entity::addComponent(TArgs... args)
 template <typename T>
 inline bool Entity::bHasComponent() const
 {
-	return componentFlags[getComponent<T>()];
+	return componentFlags[getComponentID<T>()];
 }
 
 template <typename T>
