@@ -328,3 +328,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+Underworld2d/Underworld2d/Underworld2d.vcxproj.filters
+Underworld2d/Underworld2d/Underworld2d.vcxproj
+Underworld2d/Underworld2d.sln
