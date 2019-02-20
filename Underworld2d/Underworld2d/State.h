@@ -1,6 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <vector>
+#include "DisplaySystem.h"
 
 /*
 The Base State class
@@ -14,5 +16,13 @@ public:
 	virtual void leaving() = 0;
 	virtual void update(float dt) = 0;
 	virtual void events(sf::Event& event) = 0;
-	virtual void draw(sf::RenderWindow& window) = 0;
+	virtual void draw(sf::RenderWindow& window)
+	{
+		displaySystem.draw(entities, window);
+	}
+
+protected:
+	DisplaySystem displaySystem;
+	std::vector<Entity> entities;
+
 };

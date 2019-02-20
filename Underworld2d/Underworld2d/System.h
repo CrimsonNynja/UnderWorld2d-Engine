@@ -1,8 +1,13 @@
 #pragma once
 
+#include <vector>
+#include <SFML/Graphics.hpp>
+#include "Entity.h"
+
+
 class System
 {
 public:
-	virtual void update() = 0;
-	virtual void events() = 0;
+	virtual void update(std::vector<Entity*> entities ,float dt) = 0;
+	virtual void events(std::vector<Entity*> entities, sf::Event& event) = 0;
 };
