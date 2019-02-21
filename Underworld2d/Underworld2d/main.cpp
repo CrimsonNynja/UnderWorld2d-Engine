@@ -4,6 +4,7 @@
 #include <string>
 #include "logger.h"
 
+#include "TextureHandler.h"
 #include "Entity.h"
 #include "healthComponent.h"
 #include "LevelComponent.h"
@@ -19,6 +20,8 @@
 
 int main()
 {
+	TextureHandler::getInstance();
+
 	Logger::log("Engine Opened", std::cout);
 
 	/*Entity e;
@@ -63,6 +66,12 @@ int main()
 
 		window.clear();
 		stateManager.draw(window);
+		for (auto x: map.tileSets)
+		{
+			sf::Sprite s;
+			s.setTexture(*x.second);
+			window.draw(s);
+		}
 		window.display();
 	}
 

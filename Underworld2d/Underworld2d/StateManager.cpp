@@ -3,12 +3,14 @@
 void StateManager::pushState(State * state)
 {
 	this->states.push(state);
+	this->states.top()->entered();
 }
 
 State* StateManager::popState()
 {
 	if (this->states.size() > 0)
 	{
+		this->states.top()->leaving();
 		State* top = this->states.top();
 		this->states.pop();
 		return top;

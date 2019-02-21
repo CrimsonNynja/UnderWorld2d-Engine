@@ -1,11 +1,14 @@
 #pragma once
 
 #include <string>
+#include <map>
 
 #include <tmxlite/Map.hpp>
 #include <tmxlite/Layer.hpp>
 
 #include <SFML/Graphics.hpp>
+
+#include "TextureHandler.h"
 
 //TODO this should load the map, anddisplay it in chunks to save on runtime memory
 class MapHandler
@@ -30,6 +33,8 @@ public:
 	/* The size of the tile in pixels, width x height */
 	sf::Vector2i tileSize;
 
+	unsigned tileCount;
+
 	/* the size of a chunk in tile units, width x height */
 	sf::Vector2f chunkSize;
 	/* The number of chunks in the map */
@@ -37,5 +42,7 @@ public:
 
 	/* the global bounds of the map, where it starts and ends */
 	sf::FloatRect globalBounds;
+
+	std::map<std::string, sf::Texture*> tileSets;
 
 };

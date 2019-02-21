@@ -13,6 +13,7 @@ class VisualComponent : public Component
 public:
 	sf::Sprite Spr;
 	sf::Texture* texture;	//figure out how this will work with animations later on
+	std::string textureSource;
 	bool bHidden;
 
 	VisualComponent() :bHidden(false)

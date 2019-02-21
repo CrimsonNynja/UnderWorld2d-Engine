@@ -7,13 +7,12 @@
 class GameplayState : public State
 {
 public:
-	GameplayState()
-	{
-		
-	}
 	void init() override {};
-	void entered() override {};
-	void leaving() override {};
-	void update(float dt) override {};
+	void entered() override;
+	void leaving() override;
+	void update(float dt) override;
 	void events(sf::Event& event) {};
+
+private:
+	bool bPaused = true;
 };
