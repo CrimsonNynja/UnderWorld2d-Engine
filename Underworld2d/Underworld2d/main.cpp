@@ -15,6 +15,8 @@
 #include "StateManager.h"
 #include "MapHandler.h"
 
+#include "ButtonEntity.h"
+
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 
@@ -41,6 +43,8 @@ int main()
 
 	sf::RenderWindow window(sf::VideoMode(600, 600), "Under World 2d Engine");
 
+	Button button();
+
 	GameplayState gameplayState;
 	StateManager stateManager;
 	stateManager.pushState(&gameplayState);
@@ -66,12 +70,12 @@ int main()
 
 		window.clear();
 		stateManager.draw(window);
-		for (auto x: map.tileSets)
+		/*for (auto x: map.tileSets)
 		{
 			sf::Sprite s;
 			s.setTexture(*x.second);
 			window.draw(s);
-		}
+		}*/
 		window.display();
 	}
 

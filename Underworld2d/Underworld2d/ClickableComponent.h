@@ -13,14 +13,21 @@ enum clickMode {
 	MOUSE_HELD
 };
 
+enum clickButton {
+	LEFT_MOUSE_BUTTON = 1,//1
+	RIGHT_MOUSE_BUTTON = 2,//10
+	SCROLL_MOUSE_CLICKED = 4//100
+};
+
 class ClickableComponent : public Component
 {
 public:
 	/* wheather this has been clicked or not */
-	bool clicked;
+	bool bClicked;
 	clickMode mode;
+	unsigned short clickButtons;
 
-	ClickableComponent()
+	ClickableComponent(clickMode clickMode, bool clicked, unsigned short clickButtons) : mode(clickMode), bClicked(clicked), clickButtons(clickButtons)
 	{
 		#ifdef DEBUG
 		Logger::log("New Clickable component added", std::cout);
