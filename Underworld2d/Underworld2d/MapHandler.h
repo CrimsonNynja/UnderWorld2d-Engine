@@ -28,12 +28,16 @@ public:
 	/* the loaded tmx map instance */
 	tmx::Map map;
 
+	//unsigned tmxVersion;
+
 	/* The size of the map in tile units, width x height */
 	sf::Vector2i mapSize;
 	/* The size of the tile in pixels, width x height */
 	sf::Vector2i tileSize;
 
 	unsigned tileCount;
+
+	sf::Color backgroundColor;
 
 	/* the size of a chunk in tile units, width x height */
 	sf::Vector2f chunkSize;

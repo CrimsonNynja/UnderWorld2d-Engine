@@ -17,6 +17,9 @@ bool MapHandler::loadMap(std::string file)
 		this->globalBounds.height	= map.getBounds().height;
 		this->globalBounds.width	= map.getBounds().width;
 
+		auto color = map.getBackgroundColour();
+		this->backgroundColor = sf::Color(color.r, color.g, color.b, color.a);
+
 		auto t = map.getTilesets();
 		for (auto x : t)
 		{
