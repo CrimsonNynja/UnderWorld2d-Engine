@@ -1,9 +1,16 @@
 #include "StateManager.h"
 
+StateManager::StateManager(sf::RenderWindow& window)
+{
+	this->window = &window;
+}
+
 void StateManager::pushState(State * state)
 {
 	this->states.push(state);
 	this->states.top()->entered();
+	this->states.top()->init();
+	this->states.top()->setWindow(*this->window);
 }
 
 State* StateManager::popState()

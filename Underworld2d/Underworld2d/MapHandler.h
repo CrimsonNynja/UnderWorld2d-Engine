@@ -2,7 +2,9 @@
 
 #include <string>
 #include <map>
+#include <vector>
 
+#include <tmxlite/TileLayer.hpp>
 #include <tmxlite/Map.hpp>
 #include <tmxlite/Layer.hpp>
 
@@ -48,5 +50,18 @@ public:
 	sf::FloatRect globalBounds;
 
 	std::map<std::string, sf::Texture*> tileSets;
+};
+
+class Chunk final : public sf::Transformable, sf::Drawable
+{
+public:
+	Chunk();
+
+private:
+	unsigned char opacity;
+	unsigned int tileCount;
+
+	std::vector<tmx::TileLayer::Tile> tiles;
+	std::vector<sf::Color> tileColors;
 
 };

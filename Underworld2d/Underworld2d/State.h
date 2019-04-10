@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include "DisplaySystem.h"
+#include "TextureHandler.h"
 
 /*
 The Base State class
@@ -16,6 +17,10 @@ public:
 	virtual void leaving() = 0;
 	virtual void update(float dt) = 0;
 	virtual void events(sf::Event& event) = 0;
+	virtual void setWindow(sf::RenderWindow& window)
+	{
+		this->window = &window;
+	}
 	virtual void draw(sf::RenderWindow& window)
 	{
 		displaySystem.draw(entities, window);
@@ -23,6 +28,7 @@ public:
 
 protected:
 	DisplaySystem displaySystem;
+	sf::RenderWindow* window;
 	std::vector<Entity> entities;
 
 };

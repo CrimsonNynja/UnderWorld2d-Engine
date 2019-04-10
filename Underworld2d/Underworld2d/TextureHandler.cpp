@@ -1,5 +1,7 @@
 #include "TextureHandler.h"
 
+//#define TextureHandlerInstance TextureHandler::getInstance()
+
 sf::Texture* TextureHandler::loadTexture(std::string fileName)
 {
 	textures[fileName].loadFromFile(fileName);

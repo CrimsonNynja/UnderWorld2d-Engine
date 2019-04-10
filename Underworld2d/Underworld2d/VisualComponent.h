@@ -11,11 +11,12 @@
 class VisualComponent : public Component
 {
 public:
-	sf::Sprite Spr;
+	sf::Sprite spr;
 	sf::Texture* texture;	//figure out how this will work with animations later on
 	std::string textureSource;
 	bool bHidden;
+	int drawLayer;
 
-	VisualComponent() :bHidden(false)
+	VisualComponent() :bHidden(false), drawLayer(0)
 	{};
 };

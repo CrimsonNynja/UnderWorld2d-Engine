@@ -12,6 +12,7 @@
 class StateManager
 {
 public:
+	StateManager(sf::RenderWindow& window);
 	void pushState(State* state);
 	State* popState();
 	State* peekState();
@@ -22,5 +23,5 @@ public:
 
 private:
 	std::stack<State*> states;
-
+	sf::RenderWindow* window;
 };

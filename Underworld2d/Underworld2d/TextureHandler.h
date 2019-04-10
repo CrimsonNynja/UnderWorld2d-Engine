@@ -8,10 +8,10 @@
 class TextureHandler
 {
 public:
-	static TextureHandler& getInstance()
+	static TextureHandler* getInstance()
 	{
 		static TextureHandler instance;
-		return instance;
+		return &instance;
 	}
 
 	TextureHandler(TextureHandler const&) = delete;
