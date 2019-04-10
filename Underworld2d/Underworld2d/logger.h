@@ -8,13 +8,11 @@
 #include <ctime>
 #include <iomanip>
 
-
 class Logger
 {
 public:
 	static void log(std::string message, std::ostream& output);
 
 private:
-
 
 };
