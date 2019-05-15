@@ -5,6 +5,7 @@
 #include "logger.h"
 
 #include "TextureHandler.h"
+#include "GlobalSettings.h"
 #include "Entity.h"
 #include "healthComponent.h"
 #include "LevelComponent.h"
@@ -25,6 +26,7 @@
 int main()
 {
 	TextureHandler::getInstance();
+	GlobalSettings::getInstance();
 	Logger::log("Engine Opened", std::cout);
 
 	//panormaic test

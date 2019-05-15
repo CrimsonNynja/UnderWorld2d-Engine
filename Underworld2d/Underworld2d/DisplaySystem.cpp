@@ -7,7 +7,8 @@ void DisplaySystem::draw(std::vector<Entity>& entities, sf::RenderWindow & windo
 		if (x.bHasComponent<VisualComponent>())
 		{
 			auto c = x.getComponent<VisualComponent>();
-			c->spr.setTexture(*c->texture);	//this probably should not be done every update frame, will be fine for testing though
+			//TODO move this out of every update call
+			c->spr.setTexture(*c->texture);
 			if (c->bHidden == false)
 			{
 				window.draw(c->spr);

@@ -3,6 +3,7 @@
 #include "System.h"
 #include <SFML/Graphics.hpp>
 #include "VisualComponent.h"
+#include "GlobalSettings.h"
 
 class DisplaySystem : public System
 {

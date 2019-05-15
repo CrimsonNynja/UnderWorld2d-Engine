@@ -3,6 +3,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "Entity.h"
+#include "GlobalSettings.h"
 
 
 class System

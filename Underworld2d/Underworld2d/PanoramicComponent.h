@@ -15,7 +15,8 @@ public:
 	float movementSpeed;
 	sf::Vector2f lowerBounds;
 	sf::Vector2f upperBounds;
+	sf::Vector2f centerPoint;
 
-	PanoramicComponent() : startPosition(0, 0), movementSpeed(1)
+	PanoramicComponent() : startPosition(0, 0), movementSpeed(1), centerPoint(0, 0)
 	{};
 };
