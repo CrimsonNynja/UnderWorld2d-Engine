@@ -10,4 +10,6 @@ public:
 	sf::Texture* inactive;
 	sf::Texture* hover;
 	sf::Texture* active;
+	bool bClickable;
+	//function to run when clicked?
 };

@@ -8,14 +8,7 @@
 class Button : public Entity
 {
 public:
-	Button()
-	{
-		this->addComponent<VisualComponent>();
-		this->addComponent<ButtonComponent>();
-		auto cc = this->addComponent<ClickableComponent>();
-		cc->mode = TOGGLE;
-	}
-
+	Button();
 	void setClickMode(clickMode mode);
 	void setInactiveTexture(sf::Texture* tex);
 	void setHoverTexture(sf::Texture* tex);

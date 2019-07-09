@@ -10,7 +10,7 @@
 enum clickMode {
 	SINGLE_CLICK = 0,
 	TOGGLE,
-	MOUSE_HELD
+	MOUSE_HOLD
 };
 
 enum clickButton {
