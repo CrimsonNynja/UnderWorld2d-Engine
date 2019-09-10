@@ -23,6 +23,11 @@
 
 #include "PanormaicState.h"
 
+void test()
+{
+	std::cout << "YO";
+}
+
 int main()
 {
 	TextureHandler::getInstance();
@@ -36,8 +41,6 @@ int main()
 	TextureHandler::getInstance()->loadTexture("C:\\Users\\hudoc\\Desktop\\images\\ground0-5.png");
 	TextureHandler::getInstance()->loadTexture("C:\\Users\\hudoc\\Desktop\\images\\ground1.png");
 	TextureHandler::getInstance()->loadTexture("C:\\Users\\hudoc\\Desktop\\images\\ground2.png");
-
-
 
 	/*Entity e;
 	e.addComponent<HealthComponent>(100, 75);
@@ -55,8 +58,8 @@ int main()
 	//Logger::log("map Size: " + std::to_string(map.mapSize.x) + ", " + std::to_string(map.mapSize.y) , std::cout);
 
 	sf::RenderWindow window(sf::VideoMode(600, 600), "Under World 2d Engine");
-
-	Button button();
+	Button button;
+	button.addClickEvent(&test);
 
 	GameplayState gameplayState;
 	PanoramicState panoramicState;

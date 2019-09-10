@@ -4,6 +4,7 @@
 #include "VisualComponent.h"
 #include "ClickableComponent.h"
 #include "ButtonComponent.h"
+#include "TextComponent.h"
 
 class Button : public Entity
 {
@@ -14,6 +15,7 @@ public:
 	void setHoverTexture(sf::Texture* tex);
 	void setActiveTexture(sf::Texture* tex);
 	void setClickButton(clickButton clickButtons);
-	void addClickEvent();
-	
+	void addClickEvent(std::function<void(void)> event);
+	std::string getButtonText();
+	bool isClicked();
 };

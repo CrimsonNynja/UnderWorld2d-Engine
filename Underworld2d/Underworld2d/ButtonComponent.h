@@ -2,6 +2,7 @@
 
 #include "Component.h"
 #include <SFML/Graphics.hpp>
+#include <functional>
 
 class ButtonComponent : public Component
 {
@@ -11,5 +12,8 @@ public:
 	sf::Texture* hover;
 	sf::Texture* active;
 	bool bClickable;
-	//function to run when clicked?
+	std::function<void(void)> event;
+
+	ButtonComponent() : bClickable(true)
+	{};
 };

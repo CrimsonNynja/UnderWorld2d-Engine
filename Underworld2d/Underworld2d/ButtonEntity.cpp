@@ -2,11 +2,13 @@
 
 Button::Button()
 {
-	auto vc = this->addComponent<VisualComponent>();
-	auto bc = this->addComponent<ButtonComponent>();
-	vc->texture = bc->inactive;
-	auto cc = this->addComponent<ClickableComponent>();
-	cc->mode = TOGGLE;
+	auto visualComponent = this->addComponent<VisualComponent>();
+	auto buttonComponent = this->addComponent<ButtonComponent>();
+	visualComponent->texture = buttonComponent->inactive;
+	auto clickableComponent = this->addComponent<ClickableComponent>();
+	clickableComponent->mode = TOGGLE;
+	auto textComponent = this->addComponent<TextComponent>();
+	textComponent->bAttachToEntity = true;
 }
 
 void Button::setClickMode(clickMode mode)
@@ -32,4 +34,23 @@ void Button::setActiveTexture(sf::Texture* tex)
 void Button::setClickButton(clickButton clickButtons)
 {
 	this->getComponent<ClickableComponent>()->clickButtons = clickButtons;
+}
+
+void Button::addClickEvent(std::function<void(void)> event)
+{
+	this->getComponent<ButtonComponent>()->event = event;
+}
+
+std::string Button::getButtonText()
+{
+	return this->getComponent<TextComponent>()->text.getString();
+}
+
+bool Button::isClicked()
+{
+	if (this->getComponent<ButtonComponent>()->active == this->getComponent<VisualComponent>()->texture)
+	{
+		return true;
+	}
+	return false;
 }

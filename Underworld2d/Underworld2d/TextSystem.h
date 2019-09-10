@@ -9,7 +9,7 @@
 class TextSystem : public System
 {
 public:
-	void update(std::vector<Entity*> entities, float dt) override {};
+	void update(std::vector<Entity*> entities, float dt) override;
 	void events(std::vector<Entity*> entities, sf::Event& event) override {};
 	void draw(std::vector<Entity>& entities, sf::RenderWindow& window) const;
 };
