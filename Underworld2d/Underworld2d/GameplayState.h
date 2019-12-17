@@ -11,7 +11,7 @@ public:
 	void entered() override;
 	void leaving() override;
 	void update(float dt) override;
-	void events(sf::Event& event) {};
+	void events(sf::Event& event) override {};
 
 private:
 	bool bPaused = true;

@@ -18,17 +18,17 @@ void ButtonSystem::events(std::vector<Entity*> entities, sf::Event & event)
 			{
 				auto clickable = x->getComponent<ClickableComponent>();
 				//Left click
-				if (clickable->clickButtons & LEFT_MOUSE_BUTTON == LEFT_MOUSE_BUTTON)
+				if ((clickable->clickButtons & LEFT_MOUSE_BUTTON) == LEFT_MOUSE_BUTTON)
 				{
 
 				}
 				//right click
-				if (clickable->clickButtons & RIGHT_MOUSE_BUTTON == RIGHT_MOUSE_BUTTON)
+				if ((clickable->clickButtons & RIGHT_MOUSE_BUTTON) == RIGHT_MOUSE_BUTTON)
 				{
 
 				}
 				//middle click
-				if (clickable->clickButtons & SCROLL_MOUSE_CLICKED == SCROLL_MOUSE_CLICKED)
+				if ((clickable->clickButtons & SCROLL_MOUSE_CLICKED) == SCROLL_MOUSE_CLICKED)
 				{
 
 				}
